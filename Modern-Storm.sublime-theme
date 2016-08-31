@@ -526,41 +526,26 @@
 		"layer0.tint": [64, 64, 64],
 		"layer0.opacity": 1.0
 	},
-
+	//Tab set
 	{
 		"class": "tabset_control",
-
-		"layer0.opacity": 1.0,
+		"layer1.texture": "Theme - Default/dark_tabset_background_transparent.png",
+		"layer0.opacity": 1,
+		"layer0.inner_margin": 0,
 		"tint_index": 0,
-
-		"layer1.texture": "Theme - Default/tabset_background_transparent.png",
-		"layer1.inner_margin": [2, 6],
+		"layer1.inner_margin": [1, 7],
 		"layer1.opacity": 1.0,
-
-		"content_margin": [3, 0, 3, 1],
-		"tab_overlap": 17,
-		"tab_width": 180,
+		"content_margin": 7,
+		"tab_overlap": 0,
+		"tab_width":180,
 		"tab_min_width": 48,
-		"tab_height": 35,
+		"tab_height": 25,
 		"mouse_wheel_switch": false
 	},
 	{
 		"class": "tabset_control",
-		"settings": ["mouse_wheel_switches_tabs", "!enable_tab_scrolling"],
+		"settings": ["mouse_wheel_switches_tabs", "enable_tab_scrolling"],
 		"mouse_wheel_switch": true
-	},
-	{
-		// Tabset override for light colors
-		"class": "tabset_control",
-		"attributes": ["file_light"],
-		"layer1.texture": "Theme - Default/light_tabset_background_transparent.png"
-	},
-	{
-		// Tabset override for medium-dark colors
-		"class": "tabset_control",
-		"attributes": ["file_medium_dark"],
-		"layer1.opacity": 1.0,
-		"layer1.texture": "Theme - Default/medium_dark_tabset_background_transparent.png"
 	},
 	{
 		// Tabset override for dark colors
@@ -574,9 +559,10 @@
 	{
 		"class": "tab_control",
 
-		"layer0.texture": "Theme - Default/tab_mask_152_gradient2.png",
+		//"layer0.texture": "Theme - Default/tab_mask_152_gradient2.png",
+		"layer0.texture": "",
 		"layer0.inner_margin": [22, 4],
-		"layer0.opacity": 1.0,
+		"layer0.opacity": 0.5,
 		"tint_index": 0,        // tint layer 0
 		"tint_modifier": [255, 0, 0, 0],
 
@@ -594,51 +580,17 @@
 
 	// Tabs (file color overrides)
 	{
-		"class": "tab_control", "attributes": ["file_light"],
-		"layer2.texture": "Theme - Default/light_unselected_tab_bg2.png",
-		"layer2.opacity": 0.7
-	},
-	{
-		"class": "tab_control", "attributes": ["file_medium"],
-		"layer2.texture": "Theme - Default/medium_unselected_tab_bg.png",
-		"layer2.opacity": 0.5
-	},
-	{
-		"class": "tab_control", "attributes": ["file_medium_dark"],
-		"tint_modifier": [255, 255, 255, 32],
-		"layer2.texture": "Theme - Default/medium_dark_unselected_tab_bg2.png",
-		"layer2.opacity": 1.0
-	},
-	{
 		"class": "tab_control", "attributes": ["file_dark"],
 		"tint_modifier": [255, 255, 255, 230],
-		"layer0.texture": "Theme - Default/dark_tab_mask3.png",
-		"layer2.texture": "Theme - Default/dark_unselected_tab_bg2.png",
+		//"layer0.texture": "Theme - Default/dark_tab_mask3.png",
+		"layer0.texture": "",
+		"layer2.texture": "",
+		//"layer2.texture": "Theme - Default/dark_unselected_tab_bg2.png",
 		"layer2.opacity": 1.0
 	},
 
 	// Selected Tabs
-	{
-		"class": "tab_control", "attributes": ["selected"],
-		"layer0.texture": "Theme - Default/tab_mask_white.png",
-		"layer1.opacity": 0.0
-	},
-	{
-		"class": "tab_control", "attributes": ["selected", "file_light"],
-		"layer2.texture": "Theme - Default/light_selected_tab_bg.png",
-		"layer2.opacity": 0.8
-	},
-	{
-		"class": "tab_control", "attributes": ["selected", "file_medium"],
-		"layer2.texture": "Theme - Default/medium_selected_tab_bg.png",
-		"layer2.opacity": 0.5
-	},
-	{
-		"class": "tab_control", "attributes": ["selected", "file_medium_dark"],
-		"tint_modifier": [0, 0, 0, 0],
-		"layer2.texture": "Theme - Default/medium_dark_selected_tab_bg.png",
-		"layer2.opacity": 0.7
-	},
+
 	{
 		"class": "tab_control", "attributes": ["selected", "file_dark"],
 		"tint_modifier": [0, 0, 0, 0],
@@ -1025,19 +977,82 @@
 		"layer0.opacity": 1.0,
 		"content_margin": [8, 8]
 	},
+  // Secondary folder icon (original) used as main folder icon
+
 	{
-		"class": "icon_folder",
-		"layer0.texture": "Theme - Default/icons/folder.png",
-		"layer0.opacity": 1.0,
-		"content_margin": [8, 8]
+	  "class": "icon_folder",
+	  "content_margin": [10, 8],
+	  "layer0.tint": [38, 50, 56],
+	  "layer0.opacity": 0,
+	  "layer1.texture": "Theme - Modern-Storm/assets/default/folder.png",
+	  "layer1.opacity": 1,
+	  "layer2.texture": "Theme - Modern-Storm/assets/accent-red/folder--hover.png",
+	  "layer2.opacity": 0.0,
+	  "layer3.texture": "Theme - Modern-Storm/assets/accent-red/folder_opened--hover.png",
+	  "layer3.opacity": 0.0,
 	},
+
 	{
-		"class": "icon_folder",
-		"parents":
+	  "class": "icon_folder",
+	  "parents":
+	  [
+		{ "class": "tree_row", "attributes": ["expanded"] }
+	  ],
+	  "layer1.opacity": 0.0,
+	  "layer2.opacity": 0.0,
+	  "layer3.opacity": 1.0,
+	},
+
+	{
+	  "class": "icon_folder",
+	  "parents":
+	  [
+		{ "class": "tree_row", "attributes": ["hover"] }
+	  ],
+	  "layer1.opacity": 0.0,
+	  "layer2.opacity": 1.0,
+	  "layer3.opacity": 0.0,
+	},
+
+	{
+	  "class": "icon_folder",
+	  "parents":
+	  [
+		{ "class": "tree_row", "attributes": ["expanded", "hover"] }
+	  ],
+	  "layer3.texture":
+	  {
+		"keyframes":
 		[
-			{ "class": "tree_row", "attributes": ["expanded"] }
+		  "Theme - Modern-Storm/assets/accent-red/folder_opened--hover-0.png",
+		  "Theme - Modern-Storm/assets/accent-red/folder_opened--hover-1.png",
+		  "Theme - Modern-Storm/assets/accent-red/folder_opened--hover-2.png",
+		  "Theme - Modern-Storm/assets/accent-red/folder_opened--hover-3.png",
+		  "Theme - Modern-Storm/assets/accent-red/folder_opened--hover-4.png",
+		  "Theme - Modern-Storm/assets/accent-red/folder_opened--hover-5.png",
+		  "Theme - Modern-Storm/assets/accent-red/folder_opened--hover-5.png",
+		  "Theme - Modern-Storm/assets/accent-red/folder_opened--hover-5.png",
+		  "Theme - Modern-Storm/assets/accent-red/folder_opened--hover-6.png",
+		  "Theme - Modern-Storm/assets/accent-red/folder_opened--hover-6.png",
+		  "Theme - Modern-Storm/assets/accent-red/folder_opened--hover-6.png",
+		  "Theme - Modern-Storm/assets/accent-red/folder_opened--hover-6.png",
+		  "Theme - Modern-Storm/assets/accent-red/folder_opened--hover-7.png",
 		],
-		"layer0.texture": "Theme - Default/icons/folder_open.png",
+		"loop": false,
+		"frame_time": 0.020,
+	  },
+	  "layer1.opacity": 0.0,
+	  "layer2.opacity": 0.0,
+	  "layer3.opacity": 1.0,
+	},
+
+	{
+	  "class": "icon_folder",
+	  "parents":
+	  [
+		{ "class": "tree_row", "attributes": ["selected"] }
+	  ],
+	  "layer1.texture": "Theme - Modern-Storm/assets/accent-red/folder--hover.png",
 	},
 	{
 		"class": "icon_folder_loading",
@@ -1045,14 +1060,19 @@
 		{
 			"keyframes":
 			[
-				"Theme - Default/icons/spinner7.png",
-				"Theme - Default/icons/spinner6.png",
-				"Theme - Default/icons/spinner5.png",
-				"Theme - Default/icons/spinner4.png",
-				"Theme - Default/icons/spinner3.png",
-				"Theme - Default/icons/spinner2.png",
-				"Theme - Default/icons/spinner1.png",
-				"Theme - Default/icons/spinner.png",
+				"Theme - Modern-Storm/assets/accent-red/spinner11.png",
+				"Theme - Modern-Storm/assets/accent-red/spinner10.png",
+				"Theme - Modern-Storm/assets/accent-red/spinner9.png",
+				"Theme - Modern-Storm/assets/accent-red/spinner8.png",
+				"Theme - Modern-Storm/assets/accent-red/spinner7.png",
+				"Theme - Modern-Storm/assets/accent-red/spinner6.png",
+				"Theme - Modern-Storm/assets/accent-red/spinner5.png",
+				"Theme - Modern-Storm/assets/accent-red/spinner4.png",
+				"Theme - Modern-Storm/assets/accent-red/spinner3.png",
+				"Theme - Modern-Storm/assets/accent-red/spinner2.png",
+				"Theme - Modern-Storm/assets/accent-red/spinner1.png",
+				"Theme - Modern-Storm/assets/accent-red/spinner.png",
+
 			],
 			"loop": true,
 			"frame_time": 0.075,
