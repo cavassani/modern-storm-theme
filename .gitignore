@@ -1,3 +1,5 @@
 SublimeThemingIsTooHard-master
 modern-storm/preferences
 modern-storm/iconsmaterial
+*.sublime-project
+*.sublime-workspace
